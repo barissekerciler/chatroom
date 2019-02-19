@@ -12,7 +12,7 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route('/chatroom', methods=['POST', 'GET'])
+@app.route('/', methods=['POST', 'GET'])
 def chat():
     redi_ = RedisOperations()
     if request.method == 'GET':
