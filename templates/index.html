@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CHATROOM</title>
+</head>
+<body>
+<form action = "http://localhost:5000/" method = "POST">
+         <p>Username <input type = "text" name = "username" /></p>
+         <p>Message <input type = "text" name = "message" /></p>
+         <p><input type = "submit" value = "submit" /></p>
+      </form>
+
+<table style="width:100%" align="left">
+<tr>
+    <th>Username</th>
+    <th>Message</th>
+</tr>
+{% for data_ in data %}
+<tr>
+    <td>{{ data_['username'] }}</td>
+    <td>{{ data_['message'] }}</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>
