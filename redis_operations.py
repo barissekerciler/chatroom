@@ -5,12 +5,11 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 port_ = config['REDIS']['PORT']
 host_ = config['REDIS']['HOST']
-password_ = config['REDIS']['PASSWORD']
 
 
 class RedisOperations(object):
     def __init__(self):
-        self.r = redis.Redis(host=host_, port=port_, password=password_)
+        self.r = redis.Redis(host=host_, port=port_)
 
     def save_message(self, username, message):
         try:
